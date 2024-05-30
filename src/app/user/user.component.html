@@ -1,0 +1,9 @@
+<section>
+    @if(isLoggedIn){
+    <span class="textHeader">Welcome, {{username}}</span>
+    <img src="https://github.com/alleneka.png" alt="photo">
+    }@else{
+    <span class="textHeader">Log In!</span>
+    <button (click)="isLoggedIn = true">Log In</button>
+    }
+</section>

@@ -1,0 +1,24 @@
+<mat-card class="storyItem">
+  @if(story){
+  <mat-card-title>{{ story.title }}</mat-card-title>
+  <mat-card-actions>
+    @if(story.url!=null){
+    <a class="myBtnOpen" mat-raised-button [href]="story.url" target="_blank">
+      Open story
+
+    </a>
+    }@else{
+
+    <mat-dialog-actions >
+      <button class="myBtnInfo" mat-raised-button (click)="showDialog(story)">
+        More info
+      </button>
+    </mat-dialog-actions>
+    }
+
+  </mat-card-actions>
+
+
+  }
+</mat-card>
+<mat-divider></mat-divider>

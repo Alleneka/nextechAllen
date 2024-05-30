@@ -1,0 +1,10 @@
+<!-- <div>
+    <input [(ngModel)]="query" placeholder="Search stories" />
+    <button (click)="onSearch()">Search</button>
+</div> -->
+
+<mat-form-field class="searchbar">
+    <mat-label>Search stories</mat-label>
+    <input matInput [(ngModel)]="query" (input)="onSearch()" placeholder="Search...">
+    
+</mat-form-field>
