@@ -12,12 +12,12 @@ import { StoryItem } from '../components/news-list/news-list.component';
 })
 export class DialogBodyComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public story:StoryItem, private ref:MatDialogRef<DialogBodyComponent>){
+  constructor(@Inject(MAT_DIALOG_DATA) public story: StoryItem, private ref: MatDialogRef<DialogBodyComponent>) {
     console.log(story);
     console.log(story.title);
   }
 
-  closePopup(){
+  closePopup() {
     this.ref.close();
   }
 

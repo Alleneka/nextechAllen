@@ -1,16 +1,14 @@
-
-
-.btnNav:enabled{
+.btnNav:enabled {
     color: rgb(233, 243, 243);
     background-color: rgb(30, 30, 30);
     border-color: rgb(255, 142, 36);
 }
 
-.btnNav:disabled{
+.btnNav:disabled {
     color: gray;
     background-color: rgb(37, 37, 37);
 }
 
-.paginationClass *{
+.paginationClass * {
     margin-right: 15px;
 }

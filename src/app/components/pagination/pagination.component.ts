@@ -20,7 +20,6 @@ export class PaginationComponent {
   onPageChange(page: number){
     this.currentPage = page;
     this.pageChange.emit(page);
-    //this.onSearch();
   }
 
   totalPages(): number {

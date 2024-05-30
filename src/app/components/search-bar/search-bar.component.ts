@@ -11,10 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class SearchBarComponent {
   @Input() query: string = '';
-  
+
   @Output() search = new EventEmitter<string>();
 
-  onSearch(){
+  onSearch() {
     this.search.emit(this.query);
   }
 

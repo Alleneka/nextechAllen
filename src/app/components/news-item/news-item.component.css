@@ -1,18 +1,18 @@
-.storyItem{
+.storyItem {
     margin: 10px;
     padding: 20px;
-    color:rgb(224, 217, 208);
+    color: rgb(224, 217, 208);
     background-color: rgb(38, 38, 38);
 }
 
-.myBtnOpen{
+.myBtnOpen {
     margin-right: 15px;
-    color:rgb(38, 38, 38);
+    color: rgb(38, 38, 38);
     background-color: rgb(248, 118, 31);
 }
 
-.myBtnInfo:enabled{
+.myBtnInfo:enabled {
     margin-right: 15px;
-    color:rgb(38, 38, 38);
+    color: rgb(38, 38, 38);
     background-color: rgb(248, 147, 31);
 }

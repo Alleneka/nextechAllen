@@ -2,9 +2,9 @@
     <button class="btnNav" mat-stroked-button (click)="onPageChange(currentPage - 1)"
         [disabled]="currentPage <= 1">Previous</button>
     <span>Page {{currentPage}} of {{totalPages()}}</span>
-    <button class="btnNav" mat-stroked-button  (click)="onPageChange(currentPage + 1)"
+    <button class="btnNav" mat-stroked-button (click)="onPageChange(currentPage + 1)"
         [disabled]="currentPage >= totalPages()">Next</button>
-    
+
     <mat-form-field appearance="fill">
         <mat-label>Page Size</mat-label>
         <mat-select (selectionChange)="updatePageSize($event.value)">
@@ -14,6 +14,6 @@
             <mat-option value="50">50</mat-option>
         </mat-select>
     </mat-form-field>
-    
-    
+
+
 </div>

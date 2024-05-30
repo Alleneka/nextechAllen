@@ -37,7 +37,7 @@ export interface SearchResult {
   styleUrl: './news-list.component.css'
 })
 export class NewsListComponent {
-  dataSource!: MatTableDataSource<number>;
+  //dataSource!: MatTableDataSource<number>;
   stories: any[] = [];
   currentPage = 1;
   pageSize = 20;
@@ -116,24 +116,11 @@ export class NewsListComponent {
         this.stories = data.items;
         this.totalCount = data.totalCount
         console.log("Count: " + this.totalCount + ". Search: " + this.stories)
-        this.dataSource = new MatTableDataSource(this.stories);
+        //this.dataSource = new MatTableDataSource(this.stories);
         this.isLoading = false;
       })
     }
     
   }
-
-  /*applyFilter(event: Event) {
-    console.log("applyFilter happening!")
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-    console.log(this.dataSource);
-    
-
-  }*/
 
 }

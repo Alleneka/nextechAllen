@@ -9,19 +9,19 @@ import { SearchResult } from '../components/news-list/news-list.component';
 export class HackerNewsService {
   public baseUrl = 'https://localhost:44313/api/news';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getNewestStories(page: number, pageSize: number): Observable<any>{
+  getNewestStories(page: number, pageSize: number): Observable<any> {
     return this.http.get(`${this.baseUrl}?page=${page}&pageSize=${pageSize}`);
   }
 
-  searchStories(query: string, currentPage: number, pageSize: number): Observable<any>{
+  searchStories(query: string, currentPage: number, pageSize: number): Observable<any> {
 
     let params = new HttpParams()
       .set('query', query)
       .set('page', currentPage)
       .set('pageSize', pageSize);
 
-    return this.http.get<SearchResult>(`${this.baseUrl}/search`, {params});
+    return this.http.get<SearchResult>(`${this.baseUrl}/search`, { params });
   }
 }

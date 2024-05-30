@@ -15,13 +15,13 @@
 
     }@else{
     @if(stories.length>0){
-      @for(story of stories; track story){
-        <app-news-item [story]="story"></app-news-item>
-        }
-    }@else{
-      <h4 class="noStories">No stories found.</h4>
+    @for(story of stories; track story){
+    <app-news-item [story]="story"></app-news-item>
     }
-    
+    }@else{
+    <h4 class="noStories">No stories found.</h4>
+    }
+
     }
 
 
