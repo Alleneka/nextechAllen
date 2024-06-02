@@ -1,4 +1,4 @@
-header{
+header {
     background-color: rgb(255, 88, 22);
     position: fixed;
     padding: 10px;
@@ -8,18 +8,18 @@ header{
 
 }
 
-.itemsHeader{
-    width:80%;
+.itemsHeader {
+    width: 80%;
     margin: auto;
 }
 
-.title{
+.title {
     display: inline-block;
     margin: 14px;
     font-size: 40px;
 }
 
-app-user{
+app-user {
     float: right;
     margin-right: 40px;
 }

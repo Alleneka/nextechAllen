@@ -14,14 +14,14 @@ import { MatList } from '@angular/material/list';
 import { MatProgressBar } from '@angular/material/progress-bar';
 
 
-export interface StoryItem{
-  id:number,
-  title:string,
-  url:string,
-  by:string,
-  score:number,
-  time:number,
-  text:string
+export interface StoryItem {
+  id: number,
+  title: string,
+  url: string,
+  by: string,
+  score: number,
+  time: number,
+  text: string
 }
 
 export interface SearchResult {
@@ -37,7 +37,6 @@ export interface SearchResult {
   styleUrl: './news-list.component.css'
 })
 export class NewsListComponent {
-  //dataSource!: MatTableDataSource<number>;
   stories: any[] = [];
   currentPage = 1;
   pageSize = 20;
@@ -49,14 +48,13 @@ export class NewsListComponent {
   isNewSearch: boolean = false;
   query: string = '';
 
+  constructor(private hackerNewsService: HackerNewsService) { }
 
-  constructor(private hackerNewsService: HackerNewsService) {}
-
-  ngOnInit(){
+  ngOnInit() {
     this.loadStories();
   }
 
-  loadStories(){
+  loadStories() {
     this.isLoading = true;
     this.hackerNewsService.getNewestStories(this.currentPage, this.pageSize).subscribe(data => {
       this.stories = data;
@@ -64,63 +62,53 @@ export class NewsListComponent {
       console.log(this.stories[1].by);
       this.totalCount = 500;
       this.isLoading = false;
-      
     })
   }
 
-  /*onPageChange1(event: PageEvent){
-    this.currentPage = event.pageIndex;
-    this.pageSize = event.pageSize
-    this.loadStories();
-  }*/
-
-  onPageChange(page: number){
+  onPageChange(page: number) {
     this.currentPage = page;
-    if(this.isSearch){
+    if (this.isSearch) {
       this.onSearch(this.query);
-    }else{
+    } else {
       this.loadStories();
     }
-    
   }
 
-  onPageSize(size: number){
-   this.pageSize = size;
-   this.onSearch(this.query);
+  onPageSize(size: number) {
+    this.pageSize = size;
+    this.onSearch(this.query);
   }
 
+  onSearch(query: string) {
 
-  onSearch(query: string){
-    
     console.log("query: " + this.query);
-    if(typeof query === "string" && query.trim() === ""){
+    if (typeof query === "string" && query.trim() === "") {
       console.log("loadStories...");
       this.isSearch = false;
       this.loadStories();
-      
 
-    }else{
+
+    } else {
       console.log("searching...");
       this.isSearch = true;
-      if(this.query != query){
+      if (this.query != query) {
         this.isNewSearch = true;
         this.currentPage = 1;
-      }else{
+      } else {
         this.isNewSearch = false;
       }
       this.query = query;
 
       this.isLoading = true;
       this.hackerNewsService.searchStories(this.query, this.currentPage, this.pageSize).subscribe(data => {
-      
+
         this.stories = data.items;
         this.totalCount = data.totalCount
         console.log("Count: " + this.totalCount + ". Search: " + this.stories)
-        //this.dataSource = new MatTableDataSource(this.stories);
         this.isLoading = false;
       })
     }
-    
+
   }
 
 }

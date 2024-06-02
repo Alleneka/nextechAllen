@@ -16,8 +16,7 @@ export class PaginationComponent {
   @Output() pageChange = new EventEmitter<number>();
   @Output() reloadStories = new EventEmitter<number>();
 
-
-  onPageChange(page: number){
+  onPageChange(page: number) {
     this.currentPage = page;
     this.pageChange.emit(page);
   }
@@ -26,7 +25,7 @@ export class PaginationComponent {
     return Math.ceil(this.totalCount / this.pageSize);
   }
 
-  updatePageSize(size: number){
+  updatePageSize(size: number) {
     console.log("size: " + size)
     this.pageSize = size;
     this.currentPage = 1;

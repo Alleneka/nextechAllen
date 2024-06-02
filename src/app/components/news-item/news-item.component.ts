@@ -9,7 +9,7 @@ import { DialogBodyComponent } from '../../dialog-body/dialog-body.component';
 @Component({
   selector: 'app-news-item',
   standalone: true,
-  imports: [MatListModule, MatButtonModule, MatDialogModule, DialogBodyComponent,MatCardModule],
+  imports: [MatListModule, MatButtonModule, MatDialogModule, DialogBodyComponent, MatCardModule],
   templateUrl: './news-item.component.html',
   styleUrl: './news-item.component.css'
 })
@@ -17,11 +17,9 @@ export class NewsItemComponent {
 
   @Input() story: StoryItem | undefined;
 
-  constructor(public matDialog:MatDialog){ }
-
-
+  constructor(public matDialog: MatDialog) { }
 
   showDialog(story: StoryItem) {
-    this.matDialog.open(DialogBodyComponent, {width: '600px', height: '500px', data:story});
+    this.matDialog.open(DialogBodyComponent, { width: '600px', height: '500px', data: story });
   }
 }
